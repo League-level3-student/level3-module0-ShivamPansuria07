@@ -1,11 +1,21 @@
 package _01_Simple_Array_Algorithms;
 
+import org.jointheleague.graphical.robot.Robot;
+
 public class _00_1D_Array_Methods {
     //1. Complete the method so that it returns the sum of all
     //   of the integers in the array being passed in
     public static int sumIntArray(int[] values) {
+    	for (int i = 0; i < values.length; i++) {
+    		values=new int[i];
+    		
+		}
+    int f = values.length;
 
-        return 0;
+    	 return values[f]+values[2];
+   
+       
+        
     }
 
     //2. Complete the method so that it returns the average of all
