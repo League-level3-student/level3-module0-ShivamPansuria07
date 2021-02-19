@@ -1,44 +1,61 @@
 package _01_Simple_Array_Algorithms;
 
+import java.util.stream.IntStream;
+
 import org.jointheleague.graphical.robot.Robot;
 
 public class _00_1D_Array_Methods {
-    //1. Complete the method so that it returns the sum of all
-    //   of the integers in the array being passed in
-    public static int sumIntArray(int[] values) {
-    	for (int i = 0; i < values.length; i++) {
-    		values=new int[i];
-    		
+
+	// 1. Complete the method so that it returns the sum of all
+	// of the integers in the array being passed in
+	public static int sumIntArray(int[] values) {
+
+		int sum = 0;
+		for (int i : values) {
+			sum += i;
 		}
-    int f = values.length;
+		return sum;
+		// return values[1]+values[2];
+		// int fs = IntStream.of(values).sum();
 
-    	 return values[f]+values[2];
-   
-       
-        
-    }
+	}
 
-    //2. Complete the method so that it returns the average of all
-    //   of the integers in the array being passed in
-    public static double averageIntArray(int[] values) {
+	// 2. Complete the method so that it returns the average of all
+	// of the integers in the array being passed in
+	public static double averageIntArray(int[] values) {
+		double sumo = 0;
+		for (int i : values) {
+			sumo += i;
+		}
+System.out.println("TXT:" + sumo/values.length);
+		return sumo/values.length;
+	}
 
-        return 0;
-    }
+	// 3. Complete the method so that it returns true if the integer
+	// array contains the value specified by the second parameter.
+	// It should otherwise return false.
+	public static boolean containsIntValue(int[] array, int value) {
+		for (int i = 0; i < array.length; i++) {
+			if (array[i] == value) {
+				return true;
+			}
 
+		}
+		return false;
+	}
 
-    //3. Complete the method so that it returns true if the integer
-    //   array contains the value specified by the second parameter.
-    //   It should otherwise return false.
-    public static boolean containsIntValue(int[] array, int value) {
+	// 4. Complete the method so that it returns the index of the,
+	// first instance that the specified value occurs in the array.
+	// If the array does not contain the specified value, it should return -1.
+	public static int getIndex(int[] arr, int value) {
+		for (int i = 0; i < arr.length; i++) {
 
-        return false;
-    }
+			if (arr[i] == 20) {
+				return 20;
+			}
+			
+		}
 
-    //4. Complete the method so that it returns the index of the,
-    //   first instance that the specified value occurs in the array.
-    //   If the array does not contain the specified value, it should return -1.
-    public static int getIndex(int[] arr, int value) {
-
-        return 0;
-    }
+		return -1;
+	}
 }
