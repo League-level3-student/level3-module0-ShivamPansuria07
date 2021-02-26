@@ -66,6 +66,7 @@ public class FireworkDisplay extends JPanel implements ActionListener {
         g.setColor(new Color(10, 30, 70));
         g.fillRect(0, 0, WIDTH, HEIGHT);
 
+        
         if(firework != null) {
             firework.drawSparks(g);
         }
