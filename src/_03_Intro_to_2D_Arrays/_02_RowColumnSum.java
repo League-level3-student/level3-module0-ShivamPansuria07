@@ -1,21 +1,26 @@
 package _03_Intro_to_2D_Arrays;
 
 public class _02_RowColumnSum {
+	
 
-    public int getSumByRow(int[][] matrix, int row) {
-        for (int i = 0; i < matrix.length; i++) {
-        	//matrix[0][i]=matrix[1]+matrix[]1;
-        	
-    		matrix[1][i]=j;
-    		matrix[2][i]=j;
+	public int getSumByRow(int[][] matrix, int row) {
+
+		int sumRow0=0;
+		int[] row1;
+		row1 = matrix[row];
+
+		for (int j = 0; j < row1.length; j++) {
+			sumRow0 += row1[j];
 		}
-        return 0;
-    }
-    
-    public int getSumByColumn(int[][] matrix, int col) {
-    	int sumCollumnOne = matrix[0][1]+matrix[0][2]+matrix[0][3];
-    	int sumCollumnTwo = matrix[1][1]+matrix[1][2]+matrix[1][3];
-    	int sumCollumnThree = matrix[2][1]+matrix[2][2]+matrix[2][3];
-        return 165;
-    }
+
+		return sumRow0;
+	}
+
+	public int getSumByColumn(int[][] matrix, int col) {
+		int sumCollumn = 0;
+		for (int i = 0; i < matrix.length; i++) {
+			sumCollumn += matrix[i][col];
+		}
+		return sumCollumn;
+	}
 }
