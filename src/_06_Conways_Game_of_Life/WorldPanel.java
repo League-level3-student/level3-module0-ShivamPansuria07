@@ -19,7 +19,7 @@ public class WorldPanel extends JPanel implements MouseListener, ActionListener 
     private int cellSize;
     private int cellsPerCollumn;
     private Timer timer;
-
+    int[][] livingNeighbors;
     // 1. Create a 2D array of Cells. Do not initialize it.
    Cell[][] cells;
 
@@ -108,13 +108,21 @@ public class WorldPanel extends JPanel implements MouseListener, ActionListener 
     // Advances world one step
     public void step() {
         // 7. iterate through cells and fill in the livingNeighbors array
+    	livingNeighbors = new int[cellsPerRow][cellsPerCollumn];
         //    using the getLivingNeighbors method.
-        int[][] livingNeighbors = new int[cellsPerRow][cellsPerRow];
+    	for (int i = 0; i < cells.length; i++) {
+    		for (int j = 0; j < cells[i].length; j++) {
+    			livingNeighbors[i][j] = getLivingNeighbors(cells,i, j);
+    		}    			 
+		}
+        
 
         // 8. check if each cell should live or die
+
         for (int i = 0; i < cells.length; i++) {
         	for (int j = 0; j < cells[i].length; j++) {
-        		cells[i][j].liveOrDie(i);
+        		
+        		cells[i][j].liveOrDie(livingNeighbors[i][j]);
         	}
     }
  
@@ -123,6 +131,8 @@ public class WorldPanel extends JPanel implements MouseListener, ActionListener 
 
     // The method below gets the number of living neighbors around a
     // particular cell in the 2D array. A cell can have up to 8 neighbors.
+    // 101
+     //111
     //        1   2    3
     //        4  cell  5
     //        6   7    8
@@ -182,10 +192,12 @@ public class WorldPanel extends JPanel implements MouseListener, ActionListener 
         //    cellSize, meaning it's possible to click inside of a cell. You
         //    have to determine the cell that was clicked from the pixel
         //    location and toggle the 'isAlive' variable for that cell.
+    	int mouseX = e.getX();
+    	int mouseY = e.getY();
     	for (int i = 0; i < cells.length; i++) {
         	for (int j = 0; j < cells[i].length; j++) {
         		
-        		cells[e.getX() / cells[i][j].getX()][e.getY() / cells[i][j].getY()].isAlive = true;
+        		cells[mouseX / cellSize][mouseY/ cellSize].isAlive = true;
         	}
         	
     }
