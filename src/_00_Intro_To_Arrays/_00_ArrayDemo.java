@@ -6,6 +6,7 @@ public class _00_ArrayDemo {
         /*
          * Declaring and Initializing an array of Strings
          */
+    
         String[] names = new String[5];
         
         names[0] = "Jan";
