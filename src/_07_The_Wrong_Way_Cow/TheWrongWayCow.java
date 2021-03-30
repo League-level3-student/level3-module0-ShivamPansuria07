@@ -24,7 +24,7 @@
  * 
  * c..........
  * o...c......
- * w...o.c....
+ * w...o.c....---
  * ....w.o....
  * ......w.cow
  * Answer: [8,4]
@@ -49,16 +49,25 @@
 package _07_The_Wrong_Way_Cow;
 
 public class TheWrongWayCow {
-
+	static int cownum = 0;
     public static int[] findWrongWayCow(final char[][] field) {
         // Fill in the code to return the [col, row] coordinate position of the
         // head (letter 'c') of the wrong way cow!
-    	int[] array = new int[2];
-    	array[0]=3;
-    	array[1]=0;
-    	int[] array2 = new int[2];
-    	array2[0]=6;
-    	array2[1]=2;
-        return array;
+    	for (int i = 0; i < field.length; i++) {
+    		for (int j = 0; j < field[i].length; j++) {
+    			if(field[i][j]=='c') {
+    				cownum+=1;
+    			}
+    			if(cownum==2) {
+    				//int[] array = {};
+    		    	
+    				// return array;
+    				 
+    			}
+    		}
+    	
     }
-}
+		return null;
+		
+    }
+    }
