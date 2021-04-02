@@ -27,7 +27,7 @@ for (int i = 0; i < Array2d.length; i++) {
         //    value
 
 
-        // 5. print the element again and verify the value has changed
-System.out.println(Array2d[1][2]);
+		// 5. print the element again and verify the value has changed
+		System.out.println(Array2d[1][2]);
     }
 }
